@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOTEZA Studio | workspace</title>
+    <link rel="icon" href="./images/favicon.png">
+
+    <!-- Order matters: variables first, then sidebar, then Work page layout -->
+    <link id="theme" rel="stylesheet" href="./css/cssVariables.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/work.css">
+</head>
+
+<body>
+    <!-- Fixed blue bar on the left -->
+    <div class="navContainer">
+
+        <nav>
+            <div class="logoContainer">
+                <img class="logo" src="./images/logo.svg" alt="NOTEZA">
+            </div>
+
+            <!-- JS adds class="active" on Home -->
+            <div class="linkContainer">
+                <a id="homeLink" href="./index.html">Home</a>
+                <a id="workLink" href="./work.html">Work</a>
+                <a id="libraryLink" href="./library.html">Library</a>
+                <a id="settingLink" href="./setting.html">Settings</a>
+            </div>
+        </nav>
+
+    </div>
+
+    <main>
+        <div><button id="notes">Notes</button></div>
+        <div><button id="presentations">Presentations</button></div>
+        <div><button id="thumbnail">Thumbnail</button></div>
+        <div><button id="ui-ux">UI/UX</button></div>
+    </main>
+
+    <div id="notePopup" class="popupHide">
+        <div class="popupCard">
+            <h2>New note</h2>
+
+            <label for="noteFolder">Folder name</label>
+            <input id="noteFolder" type="text" placeholder="e.g. Math">
+
+            <label for="noteHeading">Heading</label>
+            <input id="noteHeading" type="text" placeholder="e.g. Quadratic equations">
+
+            <div class="popupBtns">
+                <button type="button" id="popupCancel">Cancel</button>
+                <button type="button" id="popupContinue">Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/work.js"></script>
+</body>
+
+</html>

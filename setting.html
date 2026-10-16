@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOTEZA | Settings</title>
+    <link rel="icon" href="./images/favicon.png">
+
+    <!-- Colors. JS will change this css variables manually -->
+    <link id="theme" rel="stylesheet" href="./css/cssVariables.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/setting.css">
+
+</head>
+
+<body>
+    <main>
+        <nav class="navContainer">
+            <nav>
+                <div class="logoContainer">
+                    <img class="logo" src="./images/logo.svg" alt="NOTEZA">
+                </div>
+                <div class="linkContainer">
+                    <a id="homeLink" href="./index.html">Home</a>
+                    <a id="workLink" href="./work.html">Work</a>
+                    <a id="libraryLink" href="./library.html">Library</a>
+                    <a id="settingLink" href="./setting.html">Settings</a>
+                </div>
+            </nav>
+        </nav>
+
+        <article class="page">
+            <h1>Settings</h1>
+
+            <div class="box">
+                <span class="label">User name</span>
+                <input id="userName" type="text" value="Student">
+            </div>
+
+            <div class="box">
+                <span class="label">Choose color theme</span>
+                <select class="colors" id="themeSelector">
+                    <option value="./css/cssVariables.css">Default</option>
+                    <option value="./css/darkTheme.css">Dark</option>
+                </select>
+            </div>
+
+            <div class="box">
+                <span class="danger">Delete all notes</span>
+                <button id="deleteBtn" type="button">Delete All</button>
+            </div>
+        </article>
+    </main>
+
+    <script src="./js/setting.js"></script>
+</body>
+
+</html>

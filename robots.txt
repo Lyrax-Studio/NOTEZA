@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /setting.html
+Disallow: /setting
+
+Sitemap: https://noteza.pages.dev/sitemap.xml
