@@ -1,0 +1,13 @@
+:root {
+    --background: #fdf8ec;              /* page cream */
+    --sidebar: #146FD0;                 /* nav blue */
+    --sidebar-text: #ffffff;
+    --sidebar-active: rgba(255, 255, 255, 0.2); /* Home / hover pill */
+    --cards: #ffffff;                   /* white cards */
+    --text: #1a1a1a;
+    --muted: #6b6b6b;                   /* smaller gray text */
+    --line: #eee6d8;
+    --sidebar-width: 200px;             /* must match nav width */
+    --radius: 22px;                    /* card corners */
+    --textarea: #fffdf7;
+}
