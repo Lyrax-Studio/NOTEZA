@@ -1,0 +1,156 @@
+body {
+    padding-left: var(--sidebar-width);
+    background: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+.libraryPage {
+    width: 100%;
+    padding: 28px 32px 48px;
+}
+
+.libraryHead {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.libraryHead h1 {
+    font-size: 1.8rem;
+}
+
+.dangerBtn,
+#closeNote {
+    border-radius: 12px;
+    padding: 8px 14px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#closeNote {
+    border: 1px solid var(--line);
+    background: var(--cards);
+}
+
+.dangerBtn {
+    background: #fff;
+    color: #c0392b;
+    border: 1px solid #f0d0cc;
+    margin-left: auto;
+}
+
+.folderCard {
+    width: 100%;
+    background: var(--cards);
+    border-radius: var(--radius);
+    padding: 16px 16px 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 8px 24px rgba(20, 111, 208, 0.06);
+}
+
+.folderTop {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.folderTop h2 {
+    font-size: 1.05rem;
+    flex: 1;
+}
+
+.folderOpenBtn {
+    background: transparent;
+    border: none;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    color: #146FD0;
+}
+
+.notesList {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+    padding-top: 8px;
+}
+
+.folderCard.is-open .notesList {
+    display: flex;
+}
+
+.noteCard {
+    display: flex;
+    align-items: center;
+    background: var(--background);
+    border-radius: 14px;
+    padding: 12px 14px;
+}
+
+.noteCard span {
+    flex: 1;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.emptyState {
+    color: var(--muted);
+    padding: 10px 4px;
+}
+
+.notePanel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: var(--sidebar-width);
+    z-index: 30;
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 32px 32px;
+    background: var(--background);
+}
+
+.notePanel.is-open {
+    display: flex;
+}
+
+.notePanelTop {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.notePanelTop h1 {
+    font-size: 1.35rem;
+}
+
+.noteOutput {
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+    background: var(--cards);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    box-shadow: 0 8px 24px rgba(20, 111, 208, 0.06);
+    white-space: pre-wrap;
+}
+
+@media (max-width: 800px) {
+    body {
+        padding-left: 0;
+    }
+
+    .libraryPage {
+        padding: 16px;
+    }
+
+    .notePanel {
+        left: 0;
+        padding: 16px;
+    }
+}

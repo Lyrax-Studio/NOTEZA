@@ -1,0 +1,218 @@
+.notePanel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 28px 32px;
+    background: var(--background);
+}
+
+.notePanel.is-open {
+    display: flex;
+}
+
+.notePanelTop {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.back{
+    text-decoration: none;
+    height: max-content;
+    width: max-content;
+}
+
+#back {
+    border: 1px solid var(--line);
+    background: var(--cards);
+    border-radius: 10px;
+    padding: 8px 14px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.noteHeading {
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.noteOutput {
+    flex: 1;
+    overflow: auto;
+    background: var(--cards);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    box-shadow: 0 8px 24px rgba(20, 111, 208, 0.06);
+    white-space: pre-wrap;
+}
+
+@media (max-width: 800px) {
+    .notePanel {
+        left: 0;
+        padding: 16px;
+    }
+}
+
+/*
+    Home layout.
+    Column 1 = greeting (grows).
+    Column 2 = storage (240px).
+    Row 2 = recently edited (both columns).
+*/
+main {
+    min-height: 100vh;
+    padding: 32px;
+    /* extra left padding so cards do not slide under the fixed nav */
+    padding-left: calc(var(--sidebar-width) + 32px);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 240px;
+    grid-template-rows: 170px auto;
+    grid-template-areas:
+        "hello storage"
+        "recent recent";
+    gap: 22px;
+    align-items: stretch;
+}
+
+.helloCard {
+    grid-area: hello;
+    background: var(--cards);
+    border-radius: var(--radius);
+    padding: 28px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 8px 24px rgba(20, 111, 208, 0.06);
+}
+
+.helloCard h1 {
+    font-size: 2.6rem;
+    line-height: 1.15;
+    font-weight: 800;
+}
+
+.helloSub {
+    font-size: 1.05rem;
+    color: var(--muted);
+}
+
+.storageCard {
+    grid-area: storage;
+    background: var(--cards);
+    border-radius: var(--radius);
+    padding: 22px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(20, 111, 208, 0.06);
+}
+
+.storageTitle {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #444;
+}
+
+.storageBar {
+    margin-top: 16px;
+    height: 10px;
+    background: #e4e0da;
+    border-radius: 999px;
+}
+
+/* width = used storage. 0% because there are no notes yet */
+.storageFill {
+    display: block;
+    width: 0%;
+    height: 100%;
+    background: #2f6bff;
+    border-radius: 999px;
+}
+
+.storageText {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.recentCard {
+    grid-area: recent;
+    background: var(--cards);
+    border-radius: var(--radius);
+    padding: 36px 18px 18px;
+    position: relative;
+    /* so .recentLabel can sit on the top edge */
+    box-shadow: 0 8px 24px rgba(20, 111, 208, 0.06);
+}
+
+/* Small chip sitting on the card border */
+.recentLabel {
+    position: absolute;
+    top: -14px;
+    left: 22px;
+    background: var(--cards);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 4px 12px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+
+#recentList {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+
+    >article {
+        background: var(--background);
+        border-radius: 16px;
+        padding: 14px 16px;
+        font-weight: 700;
+    }
+}
+
+/* Phone / small tablet: one column */
+@media (max-width: 800px) {
+    main {
+        padding: 16px;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "hello"
+            "storage"
+            "recent";
+        gap: 16px;
+    }
+
+    .helloCard {
+        min-height: 0;
+        padding: 22px 20px;
+    }
+
+    .helloCard h1 {
+        font-size: 1.8rem;
+    }
+
+    .helloSub {
+        font-size: 0.95rem;
+    }
+
+    .storageCard,
+    .recentCard {
+        padding: 20px 16px;
+    }
+
+    .recentCard {
+        padding-top: 32px;
+    }
+}

@@ -1,0 +1,14 @@
+/* DARK — brown-black like CozyEdit */
+:root {
+    --background: #1a1616;              /* page background */
+    --sidebar: #241f1f;                 /* left nav */
+    --sidebar-text: #e8d7cf;            /* nav words */
+    --sidebar-active: rgba(255, 159, 28, 0.25); /* selected item */
+    --cards: #2d2626;                   /* boxes */
+    --text: #e8d7cf;                    /* main words */
+    --muted: #8e7f78;                   /* small words */
+    --line: #3d3535;                    /* thin lines */
+    --textarea: #241f1f;                /* note box */
+    --sidebar-width: 200px;
+    --radius: 22px;
+}
