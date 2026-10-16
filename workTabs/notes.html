@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOTEZA Studio - Notes workspace</title>
+    <link rel="icon" href="../images/favicon.png">
+    <link id="theme" rel="stylesheet" href="../css/cssVariables.css">
+    <link rel="stylesheet" href="./css/notes.css">
+</head>
+
+<body>
+    <nav>
+        <a href="../work.html">Back to workspace</a>
+    </nav>
+
+    <header>
+        <h1 id="title"></h1>
+        <p id="folder"></p>
+        <time id="time"></time>
+    </header>
+
+    <section class="toolbar">
+        <button type="button" id="saveBtn">Save</button>
+
+        <button type="button" id="boldBtn"><b>B</b></button>
+        <button type="button" id="italicBtn"><i>I</i></button>
+        <button type="button" id="underlineBtn">U</button>
+        <button type="button" id="strikeBtn"><s>S</s></button>
+        <button type="button" id="clearBtn">Clear</button>
+
+        <select id="headingSelect">
+            <option value="p">None</option>
+            <option value="h1">Heading 1</option>
+            <option value="h2">Heading 2</option>
+            <option value="h3">Heading 3</option>
+            <option value="h4">Heading 4</option>
+            <option value="h5">Heading 5</option>
+            <option value="h6">Heading 6</option>
+        </select>
+
+        <select id="fontSelect">
+            <option value="Georgia">Georgia</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Arial">Arial</option>
+            <option value="Verdana">Verdana</option>
+            <option value="Tahoma">Tahoma</option>
+            <option value="Trebuchet MS">Trebuchet MS</option>
+            <option value="Courier New">Courier New</option>
+            <option value="Garamond">Garamond</option>
+        </select>
+
+        <select id="sizeSelect">
+            <option value="3">Normal</option>
+            <option value="1">Tiny</option>
+            <option value="2">Small</option>
+            <option value="4">Big</option>
+            <option value="5">Huge</option>
+            <option value="6">Giant</option>
+            <option value="7">Max</option>
+        </select>
+
+        <input type="color" id="colorInput" value="#111111" title="Text color">
+        <input type="color" id="bgColorInput" value="#ffff00" title="Highlight">
+
+        <button type="button" id="leftBtn">Left</button>
+        <button type="button" id="centerBtn">Center</button>
+        <button type="button" id="rightBtn">Right</button>
+
+        <button type="button" id="ulBtn">•</button>
+        <button type="button" id="olBtn">1.</button>
+
+        <button type="button" id="linkBtn">Link</button>
+        <button type="button" id="unlinkBtn">Unlink</button>
+        <button type="button" id="imageBtn">Image</button>
+        <button type="button" id="hrBtn">Line</button>
+    </section>
+
+    <main>
+        <div id="editor" contenteditable="true"></div>
+    </main>
+
+    <script src="./js/notes.js"></script>
+    <script src="./js/notesToolbar.js"></script>
+</body>
+
+</html>
